@@ -1,0 +1,5 @@
+aristotle/results/
+.env
+.env.*
+*.key
+__pycache__/
