@@ -13,7 +13,7 @@ import RMS.Q756Main
 import RMS.Q759
 import RMS.Q764Complete
 import RMS.Q766Canonical
-import RMS.Q776
+import RMS.Q776Main
 import RMS.Q781
 import RMS.Q788
 import RMS.Q803
