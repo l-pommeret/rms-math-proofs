@@ -2,8 +2,8 @@
 \paragraph{Informal verdict.}
 \textbf{A --- Complete solution}, with high confidence.
 
-\paragraph{Lean coverage (partial).}
-Lean proves the exact minimum and complete block-median iff classification for a supplied integrable nondecreasing rearrangement q, permutation invariance/sorting, continuous positive-block median uniqueness, and Phi\_eq\_of\_map\_eq conditional on a supplied equal-pushforward q. The sole canonical gap is to construct such a q from every printed continuous integrable f and expose the unconditional original-f minimum and all-minimizers iff theorem. Strictness, asymptotics, Bellman/stationarity refinements, affine formulas, compactness refinements, smooth nonuniqueness, and a separately named constant-function corollary are optional and are not follow-up completion requirements.
+\paragraph{Lean coverage.}
+The retry archive closes canonical Q766. exists\_integrable\_monotone\_rearrangement constructs a generalized inverse-CDF q from Integrable f alone and proves measurability, monotonicity, interval integrability, and equal pushforward. phiF\_min\_and\_argmin and phiF\_canonical then give phiF f = Phi q for every tuple, an optimal partition and attained exact value J q n s, sufficiency for every optimal block-median tuple, and an unrestricted iff classification for every tuple after a sorting permutation. The general block-cost equality retains constants, atoms, repeated centres, unused coordinates, and zero-length blocks.
 
 \subsection{Audited informal answer}
 Q766 --- Complete solution

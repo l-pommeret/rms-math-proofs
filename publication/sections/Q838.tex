@@ -2,8 +2,8 @@
 \paragraph{Informal verdict.}
 \textbf{A --- Complete and apparently correct}, with \textbf{high confidence}.
 
-\paragraph{Lean coverage (partial).}
-The verified Lean source proves the decisive oscillating integrable law for every positive finite-dimensional real normed space, with normalized liminf zero and limsup top, but its Q838.mqe uses nonempty codebooks of cardinality at most k. The only canonical gap is the kernel-checked equality with the PDF exact-cardinality functional and the resulting literal nonconvergence corollary; positive Zador asymptotics are optional.
+\paragraph{Lean coverage.}
+The currently imported and CI-verified baseline proves the oscillating integrable law for every positive finite-dimensional real normed space using nonempty codebooks with card <= k. The audited continuation module Q838Exact.lean closes the sole canonical gap: it defines the literal card = k functional, proves equality with Q838.mqe for every k >= 1 by finite-set enlargement in the infinite ambient space, links it to ordinary expectations for the constructed integrable law, transfers liminf 0 and limsup top in every positive dimension and arbitrary norm, proves finiteness for every k >= 1, and derives an unconditional no-ENNReal-limit corollary. Positive Zador theory remains optional and outside the completion gate. The full module is not yet ingested or independently CI-checked in the campaign repository.
 
 \subsection{Audited informal answer}
 Q838 --- Complete answer
