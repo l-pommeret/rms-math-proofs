@@ -27,6 +27,7 @@ Current formalizations:
 - `Q706.lean` — spectral endpoint and minimax identities for hollow matrix intervals (partial coverage);
 - `Q728.lean` — complete classification of the stick-splitting game;
 - `Q730*.lean` — the singular-value/eigenvalue block-form classification;
+- `Q748*.lean` — singular-locus chord criteria, cone bounds, Clifford coordinates, and the exact intrinsic distance in the full `2 × 2` singular locus (partial coverage);
 - `Q756*.lean` — smooth flat non-polynomial solutions of the dilation equation;
 - `Q759.lean` — two sequences converging in the smooth topology;
 - `Q764.lean` — mathematical core of the line and finite-metric center algorithms (complexity layer pending);
@@ -38,7 +39,7 @@ Current formalizations:
 - `Q804.lean` — Platonic separation results and explicit nonoptimal configurations (partial coverage);
 - `Q805.lean` — complete classification of planar norms linearly equivalent to their duals;
 - `Q830.lean` — complete homogeneous ODE classification and structural forced-equation results (partial coverage);
-- `Q831.lean` — universal formulas for elementary symmetric polynomials of powers.
+- `Q831.lean` — universal formulas for elementary symmetric polynomials of powers;
 - `Q838.lean` — arbitrary-dimensional oscillating quantization-error counterexample (partial coverage);
 - `Q850.lean` — explicit Diophantine lower bounds for the Liouville constant.
 
