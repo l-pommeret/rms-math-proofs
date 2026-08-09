@@ -2,8 +2,8 @@
 \paragraph{Informal verdict.}
 \textbf{A --- Complete solution}, with high confidence.
 
-\paragraph{Lean coverage (partial).}
-The immutable generation-0 Q776 core remains CI-verified and proves the Hadamard representation, sharp saddle envelope, and exact m=2 Bessel identity. The latest same-project archive adds a placeholder-free full m=2 stationary-phase expansion, the exact torus representation, Gaussian/Taylor/gap infrastructure, and the correctly scoped global additive theorem statement for every m >= 2. However Q776.local\_estimate, the sole multidimensional local Laplace integration theorem used for every m >= 3, is proved by the archive's sole executable sorry; therefore Q776.leading\_additive depends on sorryAx and canonical coverage remains partial.
+\paragraph{Lean coverage.}
+The exact 14-file generation-2 closure proves the additive negative-axis estimate with the exact amplitude and phase for every fixed m >= 2 and every sufficiently large R, including phase zeros; m=2 is separately explicit. The generation-1 local\_estimate sorry is replaced by a substantive proof, and the complete aggregate passed independent pinned Lean CI.
 
 \subsection{Audited informal answer}
 Q776 --- Restatement
