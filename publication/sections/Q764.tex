@@ -2,8 +2,8 @@
 \paragraph{Informal verdict.}
 \textbf{A --- Complete solution}, with high confidence.
 
-\paragraph{Lean coverage (partial).}
-Lean proves the line block-cost lemmas and dynamic-program feasibility recurrence, existence of an optimum in finite metrics, the farthest-first factor-two theorem, and the 1--2 metric lemma. Computational-complexity and hardness claims are not formalized.
+\paragraph{Lean coverage.}
+Full canonical Q764 coverage is now ingested. Q764.Line.lineKCenter\_correct and lineKCenter\_work\_le connect the actual counted line run to the original Finset Real objective and prove <=100*(n*n+k*n) work; exhaustiveMetric\_correct and exhaustiveMetric\_work\_le give the actual exact finite-metric enumeration and its 24*(n choose k)*n*k+24*\(n+1\) bound; vertexCover\_iff\_oneTwo\_radius\_one, vertexCover\_polyReduces\_metricKCenter, and vertexCover\_inP\_of\_metricKCenter\_inP give the concrete 1--2 metric equivalence, polynomial materialization, and unconditional decision-solver transfer. No P != NP premise or unconditional impossibility theorem occurs.
 
 \subsection{Audited informal answer}
 \subsubsection{1. Faithful restatement}
