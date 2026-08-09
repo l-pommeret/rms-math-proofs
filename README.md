@@ -24,6 +24,7 @@ Current formalizations:
 - `Q604.lean` — explicit polynomial Bézout coefficients;
 - `Q668.lean` — verified structural results for cyclic absolute differences (partial coverage);
 - `Q701.lean` — extreme points of an anchored Hölder ball;
+- `Q706.lean` — spectral endpoint and minimax identities for hollow matrix intervals (partial coverage);
 - `Q728.lean` — complete classification of the stick-splitting game;
 - `Q730*.lean` — the singular-value/eigenvalue block-form classification;
 - `Q756*.lean` — smooth flat non-polynomial solutions of the dilation equation;
