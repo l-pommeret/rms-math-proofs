@@ -8,6 +8,8 @@ import RMS.Q730g
 import RMS.Q756Main
 import RMS.Q759
 import RMS.Q764
+import RMS.Q766
 import RMS.Q781
+import RMS.Q788
 import RMS.Q803
 import RMS.Q831
