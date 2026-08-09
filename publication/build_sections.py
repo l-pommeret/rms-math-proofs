@@ -62,6 +62,7 @@ def _repair_math(text: str) -> str:
     text = text.replace("δ", r"\delta ").replace("σ", r"\sigma ")
     text = text.replace(r"\le r\j\ne", r"\le r\\j\ne")
     text = text.replace(r"<15\1\le", r"<15\\1\le")
+    text = text.replace(r"\i\ne", r"\\i\ne")
     return text
 
 
@@ -175,7 +176,8 @@ def _display_line(line: str) -> str:
     repaired = repaired.replace(r"\ \hline", r"\\ \hline")
     if re.fullmatch(r"\s*=+\s*", repaired):
         return "="
-    repaired = re.sub(r",\s*\[(\d+(?:\.\d+)?(?:mm|cm|pt|ex))\]\s*$", r",\\\\[\1]", repaired)
+    repaired = re.sub(r",\s*\[(\d+(?:\.\d+)?(?:mm|cm|pt|ex|em))\]\s*$", r",\\\\[\1]", repaired)
+    repaired = re.sub(r"^\s*\[(\d+(?:\.\d+)?(?:mm|cm|pt|ex|em))\]\s*$", r"\\\\[\1]", repaired)
     if repaired.endswith("\\") and not repaired.endswith("\\\\"):
         repaired += "\\"
     return repaired
@@ -333,7 +335,10 @@ def build_section(qid: str, item: dict) -> str:
 
 
 def generate_sections(data: dict, *, prune: bool = True) -> list[str]:
-    verified = [qid for qid, item in data["questions"].items() if item.get("lean_status") == "verified"]
+    verified = sorted(
+        (qid for qid, item in data["questions"].items() if item.get("lean_status") == "verified"),
+        key=lambda qid: int(qid.removeprefix("Q")),
+    )
     SECTIONS.mkdir(parents=True, exist_ok=True)
     for qid in verified:
         (SECTIONS / f"{qid}.tex").write_text(build_section(qid, data["questions"][qid]), encoding="utf-8")
