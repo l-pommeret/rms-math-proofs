@@ -19,13 +19,18 @@ Every file under `lean/RMS/` is checked by GitHub Actions with the Lean and math
 
 Current formalizations:
 
+- `Q565*.lean` — Bell-number asymptotics with the first relative correction;
 - `Q587.lean` — interpolated Taylor expansions;
 - `Q604.lean` — explicit polynomial Bézout coefficients;
-- `Q668.lean` — asymptotic classification of cyclic absolute differences;
-- `Q701.lean` — extreme points of an anchored Hölder ball.
+- `Q668.lean` — verified structural results for cyclic absolute differences (partial coverage);
+- `Q701.lean` — extreme points of an anchored Hölder ball;
 - `Q728.lean` — complete classification of the stick-splitting game;
+- `Q730*.lean` — the singular-value/eigenvalue block-form classification;
 - `Q756*.lean` — smooth flat non-polynomial solutions of the dilation equation;
 - `Q759.lean` — two sequences converging in the smooth topology;
-- `Q764.lean` — mathematical core of the line and finite-metric center algorithms.
+- `Q764.lean` — mathematical core of the line and finite-metric center algorithms (complexity layer pending);
+- `Q781.lean` — translation separation in compact topological groups;
+- `Q803.lean` — exact finite-stage characterization of achievement sets with empty interior;
+- `Q831.lean` — universal formulas for elementary symmetric polynomials of powers.
 
 These files were generated with Aristotle and are independently type-checked by the repository CI. Kernel acceptance certifies the formal statements, while correspondence with the original informal questions is audited separately.
