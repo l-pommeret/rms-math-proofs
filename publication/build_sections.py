@@ -124,6 +124,13 @@ def _inline(text: str) -> str:
 
     i = 0
     while i < len(text):
+        if text[i] == "$" and (i == 0 or text[i - 1] != "\\"):
+            end = text.find("$", i + 1)
+            if end >= 0:
+                flush()
+                output.append(r"\(" + _repair_math(text[i + 1 : end]) + r"\)")
+                i = end + 1
+                continue
         if text.startswith(r"\(", i):
             end = text.find(r"\)", i + 2)
             if end >= 0:
@@ -229,13 +236,13 @@ def markdown_to_latex(markdown: str, *, skip_title: str | None = None) -> str:
             continue
 
         if in_display:
-            if stripped == "]":
+            if stripped in {"]", "$$", r"\$\$"}:
                 out.append(r"\]")
                 in_display = False
             else:
                 out.append(_display_line(line))
             continue
-        if stripped == "[":
+        if stripped in {"[", "$$", r"\$\$"}:
             close_list()
             close_table()
             out.append(r"\[")
