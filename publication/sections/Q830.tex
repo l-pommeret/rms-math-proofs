@@ -2,8 +2,8 @@
 \paragraph{Informal verdict.}
 \textbf{A --- Complete solution}, with \textbf{high confidence} under the response's explicit convention that a solution is a \(C^2\) function on an open interval and that \(yy''=f\) means \(y(x)y''(x)=f(x)\).
 
-\paragraph{Lean coverage (partial).}
-Lean proves the complete classification of maximal classical solutions of y y\_second = 1, the energy law and explicit inverse-integral formula, plus strong necessary conditions, an integral identity, the zero-forcing classification, and a smooth nonuniqueness example for general forcing. Local existence at simple or tangent zeros and endpoint asymptotics remain under continuation.
+\paragraph{Lean coverage.}
+Full canonical coverage under the explicit classical C2 pointwise convention. For part \(a\), Lean proves that the explicit inverse-integral family gives entire solutions of y y\_second = 1 and that every interval solution is its restriction, hence exactly the maximal solutions. For the open-ended part \(b\), Lean proves forcing continuity and zero compatibility, simple and tangent zero jet constraints, the fundamental integral identity, the full f = 0 classification, and a smooth nonuniqueness example. The answer's additional local sufficiency and endpoint-asymptotic theorems are optional strengthenings, not requirements of the printed question.
 
 \subsection{Audited informal answer}
 Q830
