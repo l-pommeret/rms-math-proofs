@@ -3,7 +3,7 @@
 \textbf{C --- Substantial progress}, with \textbf{high confidence in the central classification}.
 
 \paragraph{Lean coverage (partial).}
-For arbitrary nonempty n, Lean classifies all nonnegative periodic points, proves existence of a limiting norm and existential phase-by-phase shadowing by a periodic binary orbit in S n, and proves that every nonnegative orbit tends to zero exactly when n is a power of two. For n=5 it proves the exact unique nonzero binary 15-cycle, an existential zero-or-positive asymptotic dichotomy, and a nonconstant zero-basin eigenray. It does not recover, from independent data attached to an arbitrary input, whether the scale is zero or positive or the exact positive scale and binary attractor/phase; solving n=5 alone would still not cover the canonical all-n question. The response's additional Section 6 examples are optional, not canonical completion requirements.
+For arbitrary nonempty n, the independently CI-verified baseline classifies all nonnegative periodic points, proves existence of a limiting norm and existential phase-by-phase shadowing by a periodic binary orbit, and proves that every nonnegative orbit tends to zero exactly when n is a power of two. For n=5 it proves the exact unique nonzero binary 15-cycle, an existential zero-or-positive asymptotic dichotomy, and a nonconstant zero-basin eigenray. The later Aristotle extension is not included in this verified scope and remains pending independent CI.
 
 \subsection{Audited informal answer}
 \subsection{Partial result}
@@ -165,9 +165,9 @@ For every \(X\in\mathbb R_+^n\):
 \[
    \boxed{
    \lim_{q\to\infty}
-   \left\lvert 
+   \left\lvert{}
    P^q(X)-c(X)\varepsilon^{(q)}
-   \right\rvert _\infty=0.
+   \right\rvert{}_\infty=0.
    }
    \tag{2.2}
 \]
@@ -230,12 +230,12 @@ and
 \Delta_k(u_0,\ldots,u_k)
 =
 %
-\left\lvert 
+\left\lvert{}
 \Delta_{k-1}(u_0,\ldots,u_{k-1})
 --------------------------------
 %
 \Delta_{k-1}(u_1,\ldots,u_k)
-\right\rvert .
+\right\rvert{}.
 \]
 
 Then, with cyclic indices,
@@ -365,7 +365,7 @@ P^{n-1}(Y),
 while
 
 \[
-\left\lvert P^{n-1}(X^{(q_j)})\right\rVert_\infty
+\left\lvert{}P^{n-1}(X^{(q_j)})\right\rVert_\infty
 =M_{q_j+n-1}\longrightarrow c(X),
 \]
 
@@ -810,9 +810,9 @@ There are \(c>0\) and a phase \(r\in{0,\ldots,14}\) such that
 
 \[
 \boxed{
-\left\lvert 
+\left\lvert{}
 P^q(X)-c,e_{q+r\pmod{15}}
-\right\rvert _\infty
+\right\rvert{}_\infty
 \longrightarrow0.
 }
 \tag{4.2}
@@ -912,7 +912,7 @@ The following gives such an orbit exactly.
 There exists \(X\in\mathbb R_+^5\) such that
 
 \[
-\left\lvert P^q(X)-e_{q\bmod15}\right\rvert _\infty\longrightarrow0,
+\left\lvert{}P^q(X)-e_{q\bmod15}\right\rvert{}_\infty\longrightarrow0,
 \]
 
 but no \(P^q(X)\) is periodic.

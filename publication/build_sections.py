@@ -32,6 +32,7 @@ VERDICT_NAMES = {
 
 def _repair_math(text: str) -> str:
     """Repair mechanical damage introduced while capturing rendered TeX."""
+    text = text.replace(r"\mathscr", r"\mathcal")
     text = re.sub(r"={3,}", "=", text)
     text = re.sub(r"^\s*#\s*", "= ", text)
     text = text.replace(r"\operatorname{rem}*{", r"\operatorname{rem}_{")
@@ -48,8 +49,8 @@ def _repair_math(text: str) -> str:
     text = text.replace("O!", r"O\!")
     text = text.replace(r"|h|*\infty", r"\lVert h\rVert_\infty")
     text = text.replace(r"\right|*\infty", r"\right\rVert_\infty")
-    text = text.replace(r"\left|", r"\left\lvert ")
-    text = text.replace(r"\right|", r"\right\rvert ")
+    text = text.replace(r"\left|", r"\left\lvert{}")
+    text = text.replace(r"\right|", r"\right\rvert{}")
     text = text.replace(r"\left{", r"\left\{")
     text = text.replace(r"\right}", r"\right\}")
     text = text.replace(r"\bigl{", r"\bigl\{")
@@ -284,7 +285,15 @@ def markdown_to_latex(markdown: str, *, skip_title: str | None = None) -> str:
                 close_list()
                 list_kind = wanted
                 out.append(rf"\begin{{{wanted}}}")
-            out.append(r"\item " + _inline((bullet or numbered).group(1)))
+            content = (bullet or numbered).group(1).strip()
+            if content == "[":
+                # Captured rendered Markdown sometimes folds the opening display
+                # delimiter into the numbered item itself: ``1. [``.  Keep the
+                # list open and start the display after the item marker.
+                out.extend([r"\item", r"\["])
+                in_display = True
+            else:
+                out.append(r"\item " + _inline(content))
             continue
         close_list()
 
@@ -312,6 +321,21 @@ def verdict_line(review: str, fallback: str) -> str:
     return VERDICT_NAMES.get(fallback, fallback)
 
 
+def verdict_code(review: str) -> str | None:
+    """Return the explicit A--D code from a review's Verdict section."""
+    lines = review.splitlines()
+    try:
+        start = next(i for i, line in enumerate(lines) if line.strip() == "## Verdict") + 1
+    except StopIteration:
+        return None
+    for line in lines[start:]:
+        if not line.strip():
+            continue
+        match = re.search(r"\b([ABCD])\b", line)
+        return match.group(1) if match else None
+    return None
+
+
 def build_section(qid: str, item: dict) -> str:
     response_path = RESPONSES / f"{qid}.md"
     review_path = REVIEWS / f"{qid}-review.md"
@@ -326,6 +350,16 @@ def build_section(qid: str, item: dict) -> str:
 
     review = review_path.read_text(encoding="utf-8")
     answer = response_path.read_text(encoding="utf-8")
+    retry_response = item.get("retry_response_path")
+    retry_review = item.get("retry_audit_path")
+    if retry_response and retry_review:
+        candidate_response = ROOT / retry_response
+        candidate_review = ROOT / retry_review
+        if candidate_response.is_file() and candidate_review.is_file():
+            candidate_review_text = candidate_review.read_text(encoding="utf-8")
+            if verdict_code(candidate_review_text) in {"A", "B"}:
+                answer = candidate_response.read_text(encoding="utf-8")
+                review = candidate_review_text
     verdict = verdict_line(review, item.get("review_verdict", ""))
     coverage_title = "Lean coverage" if coverage == "full" else "Lean coverage (partial)"
     return "\n".join(

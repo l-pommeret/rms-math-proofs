@@ -3,7 +3,7 @@
 \textbf{A --- Complete solution}, with \textbf{high confidence} in the two requested regimes.
 
 \paragraph{Lean coverage (partial).}
-Lean proves the deterministic range for every configuration, the complete n=2 distribution and upper-edge asymptotic, and two quadratic-form ingredients. The arbitrary-n probability asymptotics and Brownian-bridge limit remain under Aristotle continuation.
+The existing imported/CI-verified Lean remains the initial Q788 baseline \(deterministic range, exact n=2 law and ingredients\). The latest OUT\_OF\_BUDGET archive is a source-level full-canonical candidate for both arbitrary-n regimes, but its 16 new files have no current build or axiom evidence and have not been ingested.
 
 \subsection{Audited informal answer}
 Q788 --- rigorous solution
@@ -180,7 +180,7 @@ We use the classical \(L^1\)-Fourier expansion
 
 \[
 \log|1-e^{ix}|
- =\log\!\left(2\left\lvert \sin\frac x2\right\rvert \right)
+ =\log\!\left(2\left\lvert{}\sin\frac x2\right\rvert{}\right)
  =-\sum_{r=1}^{\infty}\frac{\cos(rx)}r.
 \]
 
@@ -355,7 +355,7 @@ Indeed, on an interval where
 \(|p_v^{(q)}|\ge c_K/2\), van der Corput gives
 
 \[
-\left\lvert \int e^{iRp_v(\theta)}\,d\theta\right\rvert 
+\left\lvert{}\int e^{iRp_v(\theta)}\,d\theta\right\rvert{}
  \le C_{K}R^{-1/q}
  \le C_KR^{-1/(2K+1)}.
 \]
@@ -511,11 +511,11 @@ while
 \[
 \prod_{j\ne j_0}a_j
 =
-\left\lvert \frac{z^n-1}{z-\omega_{j_0}}\right\rvert 
+\left\lvert{}\frac{z^n-1}{z-\omega_{j_0}}\right\rvert{}
 =
-\left\lvert 
+\left\lvert{}
  \sum_{\ell=0}^{n-1}z^{n-1-\ell}\omega_{j_0}^{\,\ell}
-\right\rvert 
+\right\rvert{}
 \le n,
 \]
 
