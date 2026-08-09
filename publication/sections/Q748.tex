@@ -3,7 +3,7 @@
 \textbf{C --- Substantial progress}, with high confidence in the stated partial results.
 
 \paragraph{Lean coverage (partial).}
-Verified Lean covers the 667-line intrinsic-distance/chord core, generic cone lower bounds, Clifford coordinates, and the exact all-pairs singular 2-by-2 formula across seven imported modules (3,143 lines). It does not prove generic cone upper equalities, equality with the PDF finite piecewise-C1 distance, complete positive chord/boundary theory, arbitrary-n generic distances in GL\_n\textasciicircum{}+ or Sigma\_n, or the canonical attainment classification.
+The checked-in seven-module 3,143-line baseline remains verified at the recorded immutable commit and CI run. The un-ingested retry-03 archive preserves that core and, subject to its report-only build, adds the open-set finite-piecewise-C1 bridge, exact total-variation cone formulas, the complete GL\_n\textasciicircum{}+ attainment criterion, repaired singular chord/zero/apex cases, and an all-dimensional sqrt\(2\) singular upper modulus. Its source-facing GL\_n\textasciicircum{}+ formula still contains the unevaluated posDetLink intrinsic distance; the singular formula still contains the unevaluated singularLink intrinsic distance, and the all-endpoint singular finite-piecewise-C1 bridge, generic n>=3 evaluator/certificates, higher-corank chord/spectral theorem, and singular attainment classification are absent.
 
 \subsection{Audited informal answer}
 \subsubsection{Faithful restatement}
