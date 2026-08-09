@@ -10,7 +10,7 @@ import RMS.Q748Sigma2Lower
 import RMS.Q756Main
 import RMS.Q759
 import RMS.Q764
-import RMS.Q766
+import RMS.Q766Canonical
 import RMS.Q776
 import RMS.Q781
 import RMS.Q788
