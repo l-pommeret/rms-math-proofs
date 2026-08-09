@@ -38,6 +38,8 @@ def _repair_math(text: str) -> str:
     text = text.replace(r"\operatorname*{arg,max}", r"\operatorname*{arg\,max}")
     text = text.replace("*{", "_{")
     text = text.replace(r"\operatorname_{arg\,max}", r"\operatorname*{arg\,max}")
+    text = text.replace(r"\operatorname_{argmin}", r"\operatorname*{argmin}")
+    text = text.replace(r"\operatorname_{argmax}", r"\operatorname*{argmax}")
     text = re.sub(r"(?<=[)\]])\*([A-Za-z])\b", r"_\1", text)
     for command in ("sum", "prod", "max", "min", "lim", "varepsilon"):
         text = text.replace(rf"\{command}*{{", rf"\{command}_{{")
