@@ -37,6 +37,7 @@ def _repair_math(text: str) -> str:
     text = text.replace(r"\operatorname{rem}*{", r"\operatorname{rem}_{")
     text = text.replace(r"\operatorname*{arg,max}", r"\operatorname*{arg\,max}")
     text = text.replace("*{", "_{")
+    text = re.sub(r"\\operatorname_\{([^{}]+)\}", r"\\operatorname*{\1}", text)
     text = text.replace(r"\operatorname_{arg\,max}", r"\operatorname*{arg\,max}")
     text = text.replace(r"\operatorname_{argmin}", r"\operatorname*{argmin}")
     text = text.replace(r"\operatorname_{argmax}", r"\operatorname*{argmax}")
