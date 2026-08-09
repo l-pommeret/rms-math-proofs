@@ -34,6 +34,7 @@ Current formalizations:
 - `Q781.lean` — translation separation in compact topological groups;
 - `Q788.lean` — exact two-point chord-product law and deterministic arbitrary-configuration bounds (partial coverage);
 - `Q803.lean` — exact finite-stage characterization of achievement sets with empty interior;
+- `Q804.lean` — Platonic separation results and explicit nonoptimal configurations (partial coverage);
 - `Q830.lean` — complete homogeneous ODE classification and structural forced-equation results (partial coverage);
 - `Q831.lean` — universal formulas for elementary symmetric polynomials of powers.
 - `Q838.lean` — arbitrary-dimensional oscillating quantization-error counterexample (partial coverage);
