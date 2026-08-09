@@ -36,5 +36,7 @@ Current formalizations:
 - `Q803.lean` — exact finite-stage characterization of achievement sets with empty interior;
 - `Q830.lean` — complete homogeneous ODE classification and structural forced-equation results (partial coverage);
 - `Q831.lean` — universal formulas for elementary symmetric polynomials of powers.
+- `Q838.lean` — arbitrary-dimensional oscillating quantization-error counterexample (partial coverage);
+- `Q850.lean` — explicit Diophantine lower bounds for the Liouville constant.
 
 These files were generated with Aristotle and are independently type-checked by the repository CI. Kernel acceptance certifies the formal statements, while correspondence with the original informal questions is audited separately.
