@@ -34,6 +34,7 @@ Current formalizations:
 - `Q781.lean` — translation separation in compact topological groups;
 - `Q788.lean` — exact two-point chord-product law and deterministic arbitrary-configuration bounds (partial coverage);
 - `Q803.lean` — exact finite-stage characterization of achievement sets with empty interior;
+- `Q830.lean` — complete homogeneous ODE classification and structural forced-equation results (partial coverage);
 - `Q831.lean` — universal formulas for elementary symmetric polynomials of powers.
 
 These files were generated with Aristotle and are independently type-checked by the repository CI. Kernel acceptance certifies the formal statements, while correspondence with the original informal questions is audited separately.
