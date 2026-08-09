@@ -19,6 +19,6 @@ import RMS.Q804
 import RMS.Q805
 import RMS.Q830
 import RMS.Q831
-import RMS.Q838
+import RMS.Q838Exact
 import RMS.Q850
 import RMS.Q855
