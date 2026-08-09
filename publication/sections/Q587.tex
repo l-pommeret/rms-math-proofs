@@ -2,8 +2,8 @@
 \paragraph{Informal verdict.}
 \textbf{A --- Complete solution}, with \textbf{high confidence} for every substantive case \(n\ge 1\) and \(1\le p<n\).
 
-\paragraph{Lean coverage.}
-The Lean development proves parts \(a\)--\(d\), the Peano expansion, the differentiation identities, and the order-zero counterexample. It models the interval as the whole real line and documents the resulting endpoint and node-ordering conventions.
+\paragraph{Lean coverage (partial).}
+Lean proves the whole-line, two-sided-limit version of parts \(a\)--\(d\), including the Peano expansion, differentiation identities, the continuity convention at order zero, and the punctured-limit counterexample. The printed problem allows an arbitrary real interval I and x at an endpoint; the formal source fixes I = R and does not kernel-check relative/one-sided divided-difference limits or the endpoint cases for functions defined only on I. The unordered Finset node model is harmless by symmetry, but the arbitrary-interval endpoint bridge is a genuine remaining canonical gap.
 
 \subsection{Audited informal answer}
 \subsubsection{1. Faithful restatement and conventions}

@@ -3,7 +3,7 @@
 \textbf{C --- Substantial progress}, with \textbf{high confidence in the stated exact special cases}.
 
 \paragraph{Lean coverage (partial).}
-Lean verifies all current spectral endpoint formulas, phi attainment, signed second-eigenvalue identities, connectedness of the eigenvalue ranges, universal bounds, and the density minimax supremum/infimum identities. General compactness and attainment of the full ranges, together with the centered r=0 degeneracy, remain under continuation.
+Lean kernel-checks the complete outer U1/L1/Un/Ln formulas and attainment, the exact nonnegative U2/range and nonpositive penultimate dual, the n=1 range, connectedness and explicit special interval ranges, universal bounds, and arbitrary-index density-minimax sSup/sInf identities. It does not yet prove compactness/attainment of every general eigRange or density minimax, the centered r=0 wrapper, or the singleton a=b wrapper. More fundamentally, general intermediate endpoints remain unevaluated: densMinimaxUpper/Lower and etaConst are exact reductions rather than endpoint data, and none of the audited n<=4, centered n=5, or noncentered five-dimensional solver advances is present in Lean.
 
 \subsection{Audited informal answer}
 \subsection{Partial result}
