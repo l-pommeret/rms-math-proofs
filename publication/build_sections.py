@@ -182,7 +182,7 @@ def _display_line(line: str) -> str:
     if not line.strip():
         return "%"
     repaired = _repair_math(line)
-    repaired = repaired.replace(r"\ \hline", r"\\ \hline")
+    repaired = re.sub(r"\\+\s+\\hline", lambda _: r"\\ \hline", repaired)
     if re.fullmatch(r"\s*=+\s*", repaired):
         return "="
     repaired = re.sub(r",\s*\[(\d+(?:\.\d+)?(?:mm|cm|pt|ex|em))\]\s*$", r",\\\\[\1]", repaired)
