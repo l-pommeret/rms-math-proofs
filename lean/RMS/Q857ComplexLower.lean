@@ -312,8 +312,13 @@ theorem cmin_le_of_min (hn : 0 < n) (A M : Matrix (Fin n) (Fin n) ℂ) (hM : M.d
         have hreal : (starRingEnd ℂ) (((‖A.det‖ : ℝ) : ℂ)) =
             (((‖A.det‖ : ℝ) : ℂ)) := by
           apply Complex.ext <;> simp [Complex.star_def]
-        rw [hreal]
-        field_simp
+        calc
+          A.det / (starRingEnd ℂ) (((‖A.det‖ : ℝ) : ℂ)) * (((‖A.det‖ : ℝ) : ℂ)) =
+              A.det / (((‖A.det‖ : ℝ) : ℂ)) * (((‖A.det‖ : ℝ) : ℂ)) :=
+            congrArg (fun z : ℂ => A.det / z * (((‖A.det‖ : ℝ) : ℂ))) hreal
+          _ = A.det := by
+            apply div_mul_cancel₀
+            exact_mod_cast (norm_ne_zero_iff.mpr hdetA)
       rw [hdetC, hprodmu, hτdef]
       calc D * A.det = ((starRingEnd ℂ) (etaOf A) * ((‖A.det‖:ℝ):ℂ)) * D := by
             rw [hetaconj]; ring
