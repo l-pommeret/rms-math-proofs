@@ -3,6 +3,7 @@ import RMS.Q587
 import RMS.Q604
 import RMS.Q668
 import RMS.Q701
+import RMS.Q706
 import RMS.Q728
 import RMS.Q730g
 import RMS.Q756Main
