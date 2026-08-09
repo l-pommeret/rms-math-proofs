@@ -30,6 +30,7 @@ Current formalizations:
 - `Q759.lean` — two sequences converging in the smooth topology;
 - `Q764.lean` — mathematical core of the line and finite-metric center algorithms (complexity layer pending);
 - `Q766.lean` — quantile-partition core of the continuous one-dimensional centre problem (partial coverage);
+- `Q776.lean` — Hadamard representation, saddle envelope, and the exact Bessel case (partial coverage);
 - `Q781.lean` — translation separation in compact topological groups;
 - `Q788.lean` — exact two-point chord-product law and deterministic arbitrary-configuration bounds (partial coverage);
 - `Q803.lean` — exact finite-stage characterization of achievement sets with empty interior;
