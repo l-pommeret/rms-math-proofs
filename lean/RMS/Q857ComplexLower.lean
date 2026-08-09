@@ -164,7 +164,6 @@ lemma exists_unit_phases (μ : Fin n → ℂ) (τ : ℂ) (hτ : ‖τ‖ = 1)
     · simp [hi]
     · simp only [hi, if_false]
       field_simp
-      exact (div_self (by simpa using hi : ((‖μ i‖ : ℝ) : ℂ) ≠ 0)).symm
   by_cases hall : ∀ i, μ i ≠ 0
   · refine ⟨u₀, hu₀norm, hu₀split, ?_⟩
     have hprod : ∏ i, μ i = (∏ i, ((‖μ i‖ : ℝ) : ℂ)) * ∏ i, u₀ i := by
@@ -309,7 +308,8 @@ theorem cmin_le_of_min (hn : 0 < n) (A M : Matrix (Fin n) (Fin n) ℂ) (hM : M.d
       have hetaconj : (starRingEnd ℂ) (etaOf A) * ((‖A.det‖ : ℝ) : ℂ) = A.det := by
         rw [etaOf, if_neg hdetA, map_div₀]
         simp only [RingHomCompTriple.comp_apply, RingHom.id_apply, starRingEnd_self_apply,
-          Complex.conj_ofReal, Complex.star_def]
+          Complex.star_def]
+        rw [Complex.conj_ofReal]
         field_simp
       rw [hdetC, hprodmu, hτdef]
       calc D * A.det = ((starRingEnd ℂ) (etaOf A) * ((‖A.det‖:ℝ):ℂ)) * D := by
