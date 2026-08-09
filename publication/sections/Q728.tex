@@ -3,7 +3,7 @@
 \textbf{A --- Complete solution}, with high confidence, for the meaningful range \(n\ge3\).
 
 \paragraph{Lean coverage.}
-The Lean development proves the control and steering lemmas and the complete minimax outcome theorem for every n at least 3. The lower bound is the necessary domain repair because the printed last-mover payoff is undefined for n=1,2.
+Lean formalizes every legal distinct positive-integer split, termination, terminal payoff, and the minimax predicates by well-founded recursion. It proves unconditionally for every meaningful n >= 3 that A wins for n mod 3 = 2, B wins for n mod 3 = 1, and both players have non-losing strategies exactly in the draw case n mod 3 = 0. The lower bound is the necessary domain repair because the printed last-mover payoff is undefined for n = 1, 2.
 
 \subsection{Audited informal answer}
 \subsubsection{1. Faithful restatement and a domain issue}

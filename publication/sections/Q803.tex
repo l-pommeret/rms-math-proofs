@@ -3,7 +3,7 @@
 \textbf{A --- Complete solution}, with \textbf{high confidence}.
 
 \paragraph{Lean coverage.}
-Lean proves the exact finite-approximation characterization of empty interior for achievement sets, including compactness, the decreasing longest-component lengths, their attained limit, and the equivalence with Delta\_n tending to zero.
+For every strictly positive summable real sequence, Lean defines the full achievement set of all Boolean-selected subseries, including finite selections, and proves the exact finite-stage characterization: Sigma\(a\) is the intersection of F\_n + [0,r\_n]; r\_n + Delta\_n is the attained longest interval length in the n-th approximant and decreases to the attained longest interval length in Sigma\(a\); hence interior Sigma\(a\) is empty iff Delta\_n tends to zero, equivalently iff for every epsilon > 0 some r\_n + Delta\_n < epsilon. This is unconditional and stronger than the printed hypothesis because no monotonicity assumption is needed, so it specializes directly to every positive decreasing summable sequence in Q803.
 
 \subsection{Audited informal answer}
 Q803 --- Exact finite-stage characterization
