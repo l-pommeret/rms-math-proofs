@@ -309,7 +309,10 @@ theorem cmin_le_of_min (hn : 0 < n) (A M : Matrix (Fin n) (Fin n) ℂ) (hM : M.d
         rw [etaOf, if_neg hdetA, map_div₀]
         simp only [RingHomCompTriple.comp_apply, RingHom.id_apply, starRingEnd_self_apply,
           Complex.star_def]
-        rw [Complex.conj_ofReal]
+        have hreal : (starRingEnd ℂ) (((‖A.det‖ : ℝ) : ℂ)) =
+            (((‖A.det‖ : ℝ) : ℂ)) := by
+          apply Complex.ext <;> simp [Complex.star_def]
+        rw [hreal]
         field_simp
       rw [hdetC, hprodmu, hτdef]
       calc D * A.det = ((starRingEnd ℂ) (etaOf A) * ((‖A.det‖:ℝ):ℂ)) * D := by
