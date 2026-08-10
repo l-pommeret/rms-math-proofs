@@ -2,7 +2,7 @@
 
 Lean 4 formalizations of selected answers to questions from the *Revue de la filière Mathématiques*.
 
-The canonical problem list is available at <https://lucpommeret.com/assets/Qsansreponse260405.pdf>.
+The canonical problem list is available at <https://www.rms-math.com/rms/upload/Qsansreponse260405.pdf>.
 
 ## Intermediate book
 
