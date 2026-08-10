@@ -26,9 +26,7 @@ Lean 4 formalizations of answers to open questions from the QR column of the *Re
 filière Mathématiques*.
 
 Everything here is machine-generated: solutions by a language model, formalizations by
-Aristotle. The solving compute took under a day. Kernel acceptance certifies the formal
-statements only; correspondence with the printed questions is audited separately and by
-hand. Some answers recover known results rather than producing new ones.
+Aristotle. 
 
 ## Status
 
