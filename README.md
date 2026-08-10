@@ -1,46 +1,86 @@
 # RMS formal proofs
 
-Lean 4 formalizations of selected answers to questions from the *Revue de la filière Mathématiques*.
+## À propos (français)
 
-The canonical problem list is available at <https://www.rms-math.com/rms/upload/Qsansreponse260405.pdf>.
+Ce dépôt contient des réponses aux questions sans réponse de la rubrique QR de la
+*Revue de la filière Mathématiques*, avec leur formalisation en Lean 4 : <https://www.rms-math.com/rms/upload/Qsansreponse260405.pdf>
 
-## Intermediate book
+Tout y a été produit par une *pipeline* machine : les solutions par un modèle de
+langue (GPT-5.6 Sol), les formalisations par *Aristotle*. Le tout a pris moins d'une journée.
 
-An automatically generated intermediate edition containing every answer whose
-current Lean artifact has passed the repository CI is available as
-[`publication/main.pdf`](publication/main.pdf). Each section states its informal
-audit verdict, the exact scope currently formalized, and links to the immutable
-Lean source and online type-check. This edition is updated as the proof campaign
-progresses.
+Ce chiffre est la seule chose vraiment nouvelle ici : produire des preuves mathématiques est devenu bon marché. Une preuve acceptée par
+le noyau Lean garantit que l'énoncé *formalisé* est correct.
 
-## Verification
+Une (petite) partie des réponses retrouve des résultats connus :
+Q730 est une redémonstration de la classification de Weyl–Horn, Q804 recoupe des résultats
+classiques sur le problème de Tammes.
 
-Every file under `lean/RMS/` is checked by GitHub Actions with the Lean and mathlib versions pinned in `lean/lean-toolchain` and `lean/lakefile.toml`.
+Signalements bienvenus : erreur mathématique, énoncé formalisé infidèle à la question, ou
+question déjà close par une réponse publiée dans la revue.
 
-Current formalizations:
+---
 
-- `Q565*.lean` — Bell-number asymptotics with the first relative correction;
-- `Q587.lean` — interpolated Taylor expansions;
-- `Q604.lean` — explicit polynomial Bézout coefficients;
-- `Q668.lean` — verified structural results for cyclic absolute differences (partial coverage);
-- `Q701.lean` — extreme points of an anchored Hölder ball;
-- `Q706.lean` — spectral endpoint and minimax identities for hollow matrix intervals (partial coverage);
-- `Q728.lean` — complete classification of the stick-splitting game;
-- `Q730*.lean` — the singular-value/eigenvalue block-form classification;
-- `Q748*.lean` — singular-locus chord criteria, cone bounds, Clifford coordinates, and the exact intrinsic distance in the full `2 × 2` singular locus (partial coverage);
-- `Q756*.lean` — smooth flat non-polynomial solutions of the dilation equation;
-- `Q759.lean` — two sequences converging in the smooth topology;
-- `Q764.lean` — mathematical core of the line and finite-metric center algorithms (complexity layer pending);
-- `Q766.lean` — quantile-partition core of the continuous one-dimensional centre problem (partial coverage);
-- `Q776.lean` — Hadamard representation, saddle envelope, and the exact Bessel case (partial coverage);
-- `Q781.lean` — translation separation in compact topological groups;
-- `Q788.lean` — exact two-point chord-product law and deterministic arbitrary-configuration bounds (partial coverage);
-- `Q803.lean` — exact finite-stage characterization of achievement sets with empty interior;
-- `Q804.lean` — Platonic separation results and explicit nonoptimal configurations (partial coverage);
-- `Q805.lean` — complete classification of planar norms linearly equivalent to their duals;
-- `Q830.lean` — complete homogeneous ODE classification and structural forced-equation results (partial coverage);
-- `Q831.lean` — universal formulas for elementary symmetric polynomials of powers;
-- `Q838.lean` — arbitrary-dimensional oscillating quantization-error counterexample (partial coverage);
-- `Q850.lean` — explicit Diophantine lower bounds for the Liouville constant.
+## About (English)
 
-These files were generated with Aristotle and are independently type-checked by the repository CI. Kernel acceptance certifies the formal statements, while correspondence with the original informal questions is audited separately.
+Lean 4 formalizations of answers to open questions from the QR column of the *Revue de la
+filière Mathématiques*.
+
+Everything here is machine-generated: solutions by a language model, formalizations by
+Aristotle. The solving compute took under a day. Kernel acceptance certifies the formal
+statements only; correspondence with the printed questions is audited separately and by
+hand. Some answers recover known results rather than producing new ones.
+
+## Status
+
+| Question | Verdict | Couverture Lean |
+|---|---|---|
+| Q565 | A — complete | complète |
+| Q587 | A — complete | complète |
+| Q604 | A — complete | complète |
+| Q655 | A — complete | complète |
+| Q668 | **C — substantial progress** | **partielle** |
+| Q701 | A — complete | complète |
+| Q706 | **C — substantial progress** | **partielle** |
+| Q728 | A — complete | complète |
+| Q730 | A — complete *(Weyl–Horn, résultat classique)* | complète |
+| Q748 | **C — substantial progress** | **partielle** |
+| Q756 | A — complete | complète |
+| Q759 | A — complete | complète |
+| Q764 | A — complete | complète |
+| Q766 | A — complete | complète |
+| Q776 | A — complete | complète |
+| Q781 | A — complete | complète |
+| Q788 | A — complete | complète |
+| Q803 | A — complete | complète |
+| Q804 | A — complete *(recoupe Tammes)* | **partielle** |
+| Q805 | A — complete | complète |
+| Q830 | A — complete | complète |
+| Q831 | A — complete | complète |
+| Q838 | A — complete | complète |
+| Q839 | A — complete | complète |
+| Q850 | A — complete | complète |
+| Q855 | A — complete | complète |
+| Q857 | A — complete | complète |
+| Q865 | A — complete | complète |
+| Q867 | A — complete | complète |
+| Q877 | A — complete | complète |
+| Q885 | A — complete | complète |
+| Q896 | A — complete | complète |
+| Q899 | A — complete | complète |
+
+**Verdict** est l'appréciation informelle de la solution : A := solution complète,
+C := progrès substantiel avec une part demandée encore ouverte.
+**Couverture Lean** dit si la formalisation couvre l'énoncé imprimé en entier ou seulement
+une partie ; le périmètre exact est donné en tête de chaque section du livre.
+
+## Livre intermédiaire
+
+[`publication/main.pdf`](publication/main.pdf) rassemble toutes les réponses dont
+l'artefact Lean passe la CI. Chaque section donne son verdict, le périmètre exactement
+formalisé, et des liens vers la source Lean et le type-check en ligne.
+
+## Vérification
+
+Tous les fichiers sous `lean/RMS/` sont vérifiés par GitHub Actions, avec les versions de
+Lean et de mathlib épinglées dans `lean/lean-toolchain` et `lean/lakefile.toml`. Aucun
+`sorry`, aucun axiome ajouté.
